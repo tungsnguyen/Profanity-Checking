@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  profanitycheck:
+    image: ${DOCKER_REGISTRY-}profanitycheck
+    build:
+      context: .
+      dockerfile: ProfanityCheck/Dockerfile
+    environment:
+        ASPNETCORE_URLS: "http://+:80;https://+:443"
+        ASPNETCORE_HTTPS_PORT: 44300
+    ports:
+        - "8000:80"
+        - "44300:443"

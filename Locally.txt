@@ -1,0 +1,29 @@
+Build the application:
+Backend:
+1. Open backend solution by Visual Studio.
+2. Choose Build and Build Solution
+
+Frontend:
+1. Install NodeJS and npm if not yet.
+2. Open front end folder by Visual Studio Code or other IDE
+3. Open terminal
+4. Run npm install
+
+Run the application:
+Backend:
+1. Choose Debug and Start Debugging
+2. Backend Api endpoints will be available at https://localhost:44300/api/profanitycheck
+3. Browser should show "This is in WebApi for profanity check"
+
+Frontend:
+1. From the terminal in last step, run npm start
+2. Open .env file
+3. Set the value of REACT_APP_API_URI to https://localhost:44300/api/profanitycheck
+4. From the terminal, run npm run dev
+5. Open the browser and go to http://localhost:3000
+6. Browser should show the application
+
+Test the application
+1. Initial data of backend detects bad words: Shit, Damn and bad phrases: Fuck off, Piece of shit
+2. Choose files to check and click Upload
+3. Application will notify which files contain bad words and phrases

@@ -1,0 +1,21 @@
+services:
+  profanitycheck:
+    build:
+      context: C:\Studying\FS\ProfanityCheck
+      dockerfile: ProfanityCheck/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTPS_PORT: 44300
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: profanitycheck
+    ports:
+    - published: 8000
+      target: 80
+    - target: 80
+    - published: 44300
+      target: 443
+    - target: 443
+    volumes:
+    - C:\Users\Tung Nguyen\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\Tung Nguyen\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+version: '3.4'

@@ -1,0 +1,33 @@
+Deploy frontend to Heroku:
+1. Instal Git and Heroku CLI if not yet
+2. Open front end folder by Visual Studio or another IDE
+3. Open terminal
+4. Run npm run build to build the production app
+5. Run heroku login and login to Heroku
+6. Run heroku create <app name> to create new app
+7. Run git init to initialize a git repo
+8. Run git add . to add all changes
+9. Run commit -m "Initial commit" to commit changes
+10. Run git push heroku master to push to Heroku
+
+Deploy backend to Azure:
+1. Right click on ProfanityCheck project and click Publish
+2. Click New to create new publish profile
+3. Choose App Service Linux
+4. Choose Deploy your Code and Create New
+5. Click Create Profile
+6. Fill in required fields for name, subscription, resource group and hosting plan
+7. Click Create a SQL Database
+8. Fill in the fields as you wish, except Connection string name should be ApplicationConnection
+9. Click New Database server if needed and fill in the fields
+10. Click Create to create profile
+11. Click Publish
+12. The app service home page will show. Go to address of <app service address>/api/profanitycheck. It should show "This is in WebApi for profanity check"
+13. Go back to front end terminal window.
+14. Run heroku config:set REACT_APP_API_URI='https://<app service name>.azurewebsites.net/api/profanitycheck' to set the api address for front end
+
+Test:
+1. Go to https://<app name>.herokuapp.com
+2. The application should show the same as running locally
+3. Choose files and click Upload to test
+4. Application will say which files contain bad words
